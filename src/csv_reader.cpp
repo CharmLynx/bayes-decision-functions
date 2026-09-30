@@ -15,6 +15,11 @@ namespace{
         }
         return result;
     }
+    double parse_double(const string& cell){
+        size_t pos;
+        double value = stod(cell, &pos);
+        return value;
+    }
 }
 
 vector<vector<double>> read_double_matrix(const string& path) {
