@@ -42,5 +42,16 @@ vector<vector<double>> read_double_matrix(const string& path) {
 }
 
 vector<vector<int>> read_int_matrix(const string& path) {
-    return {};
+    ifstream f(path);
+    vector<vector<int>> matrix;
+    string line;
+    while (getline(f, line)){
+        vector<string> cells = split_line(line);
+        vector<int> row;
+        for (const string& cell : cells) {
+            row.push_back(parse_int(cell));
+        }
+        matrix.push_back(row);
+    }
+    return matrix;
 }
