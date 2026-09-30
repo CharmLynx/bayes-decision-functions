@@ -16,14 +16,29 @@ namespace{
         return result;
     }
     double parse_double(const string& cell){
-        size_t pos;
-        double value = stod(cell, &pos);
+        double value = stod(cell);
         return value;
     }
+    int parse_int(const string& cell){
+        int value = stoi(cell);
+        return value;
+    }
+
 }
 
 vector<vector<double>> read_double_matrix(const string& path) {
-    return {};
+    ifstream f(path);
+    vector<vector<double>> matrix;
+    string line;
+    while (getline(f, line)){
+        vector<string> cells = split_line(line);
+        vector<double> row;
+        for (const string& cell : cells) {
+            row.push_back(parse_double(cell));
+        }
+        matrix.push_back(row);
+    }
+    return matrix;
 }
 
 vector<vector<int>> read_int_matrix(const string& path) {
