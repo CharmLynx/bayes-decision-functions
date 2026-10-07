@@ -32,7 +32,8 @@ vector<vector<double>> compute_p_m_given_c(const vector<vector<double>>& p_mc, c
     for (size_t m = 0; m < n; m++) {
         for (size_t c = 0; c < n; c++) {
             if (p_c[c] > 0) {
-                p_m_given_c[m][c] = p_mc[m][c] / p_c[c];
+                p_m_given_c[c][m] = p_mc[m][c] / p_c[c];
+
             }
         }
     }
