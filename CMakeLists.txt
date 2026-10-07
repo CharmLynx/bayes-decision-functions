@@ -8,6 +8,7 @@ add_executable(bayes
     src/main.cpp
     src/csv_reader.cpp
     src/cipher_model.cpp
+    src/distributions.cpp
 )
 
 target_include_directories(bayes PRIVATE include)
