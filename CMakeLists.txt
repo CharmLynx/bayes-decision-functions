@@ -10,6 +10,7 @@ add_executable(bayes
     src/cipher_model.cpp
     src/distributions.cpp
     src/decision_functions.cpp
+    src/loss.cpp
 )
 
 target_include_directories(bayes PRIVATE include)
